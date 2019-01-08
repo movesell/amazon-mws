@@ -1216,7 +1216,7 @@ class MWSClient{
      * @return array
      * @throws Exception
      */
-    public function getFinancialEvents($StartDate = null, $EndDate = null){
+    public function getFinancialEvents($StartDate = null, $EndDate = null, $AmazonOrderId = null){
         $query = [
 
         ];
@@ -1236,6 +1236,11 @@ class MWSClient{
                 $query['PostedBefore'] = gmdate(self::DATE_FORMAT, $EndDate->getTimestamp());
             }
         }
+
+        if (!is_null($AmazonOrderId)) {
+            $query['AmazonOrderId'] = $AmazonOrderId;
+        }
+
 
         $response = $this->request(
             'ListFinancialEvents',
