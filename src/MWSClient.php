@@ -1252,6 +1252,27 @@ class MWSClient{
     }
 
     /**
+     * Get Financial Events By Next Token
+     *
+     * @param string $NextToken
+     *
+     * @return array
+     */
+    public function GetFinancialEventsByNextToken($NextToken)
+    {
+        $query = [
+            'NextToken' => $NextToken,
+        ];
+
+        $response = $this->request(
+            'ListFinancialEventsByNextToken',
+            $query
+        );
+
+        return $response;
+    }
+
+    /**
      * Request MWS
      */
     private function request($endPoint, array $query = [], $body = null, $raw = false)
