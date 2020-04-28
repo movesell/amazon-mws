@@ -395,7 +395,7 @@ class MWSClient{
         ];
 
         if ($till !== null) {
-            $queryParameters['before'] = gmdate(self::DATE_FORMAT, $till->getTimestamp());
+            $query[$queryParameters['before']] = gmdate(self::DATE_FORMAT, $till->getTimestamp());
         }
 
         $counter = 1;
