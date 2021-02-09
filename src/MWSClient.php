@@ -43,6 +43,7 @@ class MWSClient{
         'A39IBJ37TRP1C6' => 'mws.amazonservices.com.au',
         'A2Q3Y263D00KWC' => 'mws.amazonservices.com',
         'A1805IZSGTT6HS' => 'mws-eu.amazonservices.com',
+        'A2NODRKZP88ZB9' => 'mws-eu.amazonservices.com',
     ];
 
     protected $debugNextFeed = false;
